@@ -21,6 +21,17 @@ class LoginPage {
         return $('#login_button_container > div > form > div.error-message-container.error > h3');
     }
 
+    get btnErrorMsg () {
+        return $('#login_button_container > div > form > div.error-message-container.error > h3 > button');
+    }
+
+    get robotImg () {
+        return $('#root > div > div.login_wrapper > div.login_wrapper-inner > div.bot_column');
+    } 
+
+    get loginLogo () {
+        return $('.login_logo');
+    }
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
