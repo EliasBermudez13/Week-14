@@ -13,6 +13,10 @@
         return $('#react-burger-menu-btn');
     }
 
+    get burgerMenuLogOut () {
+        return $('#logout_sidebar_link');
+    }
+
     get cart () {
         return $('#shopping_cart_container');
     }
@@ -23,6 +27,10 @@
 
     get productsTitle () {
         return $('#header_container > div.header_secondary_container > span');
+    }
+    
+    get productsBotImg () {
+        return $('#header_container > div.header_secondary_container > div.peek');
     }
 
     get productsSort () {
