@@ -1,7 +1,7 @@
 import LoginPage from  '../pageobjects/login.page';
 import InventoryPage from '../pageobjects/inventory.page';
 
-describe('Login with standard_user', () => {  
+describe('Login with problem_user', () => {  
     beforeAll('Navigate to url', () => {
         browser.url('https://www.saucedemo.com/');
     });
@@ -17,28 +17,21 @@ describe('Login with standard_user', () => {
     });
 
     it('should not login with empty Password input', async () => {
-        await LoginPage.login('standard_user', '');
+        await LoginPage.login('problem_user', '');
         await expect(LoginPage.errorMsg).toBeDisplayed();
         await expect(LoginPage.btnErrorMsg).toBeClickable();
         await expect(LoginPage.errorMsg).toHaveText('Epic sadface: Password is required');
     });
 
     it('should not login with wrong Password input', async () => {
-        await LoginPage.login('standard_user', 'wrong_pass');
-        await expect(LoginPage.errorMsg).toBeDisplayed();
-        await expect(LoginPage.btnErrorMsg).toBeClickable();
-        await expect(LoginPage.errorMsg).toHaveText('Epic sadface: Username and password do not match any user in this service');
-    });
-
-    it('should not login with wrong inputs', async () => {
-        await LoginPage.login('wrong_user', 'wrongpass');
+        await LoginPage.login('problem_user', 'wrong_pass');
         await expect(LoginPage.errorMsg).toBeDisplayed();
         await expect(LoginPage.btnErrorMsg).toBeClickable();
         await expect(LoginPage.errorMsg).toHaveText('Epic sadface: Username and password do not match any user in this service');
     });
 
     it('should login with valid inputs', async () => {
-        await LoginPage.login('standard_user', 'secret_sauce');
+        await LoginPage.login('problem_user', 'secret_sauce');
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
         await expect(InventoryPage.pageLogo).toBeDisplayedInViewport();
         await expect(InventoryPage.burgerMenu).toBeDisplayed();
@@ -54,12 +47,12 @@ describe('Login with standard_user', () => {
         await expect(InventoryPage.productsSort).toBeDisplayed();
         await expect(InventoryPage.productsSort).toBeDisplayedInViewport();
         await expect(InventoryPage.productsSort).toBeClickable();
-        await expect(InventoryPage.firstProduct).toHaveAttr('src', '/static/media/sauce-backpack-1200x1500.34e7aa42.jpg');
-        await expect(InventoryPage.secondProduct).toHaveAttr('src', '/static/media/bike-light-1200x1500.a0c9caae.jpg');
-        await expect(InventoryPage.thirdProduct).toHaveAttr('src', '/static/media/bolt-shirt-1200x1500.c0dae290.jpg');
-        await expect(InventoryPage.fourthProduct).toHaveAttr('src', '/static/media/sauce-pullover-1200x1500.439fc934.jpg');
-        await expect(InventoryPage.fiftProduct).toHaveAttr('src', '/static/media/red-onesie-1200x1500.1b15e1fa.jpg');
-        await expect(InventoryPage.sixthProduct).toHaveAttr('src', '/static/media/red-tatt-1200x1500.e32b4ef9.jpg');
+        await expect(InventoryPage.firstProduct).toHaveAttr('src', '/static/media/sl-404.168b1cce.jpg');
+        await expect(InventoryPage.secondProduct).toHaveAttr('src', '/static/media/sl-404.168b1cce.jpg');
+        await expect(InventoryPage.thirdProduct).toHaveAttr('src', '/static/media/sl-404.168b1cce.jpg');
+        await expect(InventoryPage.fourthProduct).toHaveAttr('src', '/static/media/sl-404.168b1cce.jpg');
+        await expect(InventoryPage.fiftProduct).toHaveAttr('src', '/static/media/sl-404.168b1cce.jpg');
+        await expect(InventoryPage.sixthProduct).toHaveAttr('src', '/static/media/sl-404.168b1cce.jpg');
         await expect(InventoryPage.productPrice).toBeDisplayed();
         await expect(InventoryPage.productPrice).toBeDisplayedInViewport();
         await expect(InventoryPage.backpackAddToCartBtn).toBeDisplayed();
@@ -108,5 +101,3 @@ describe('Login with standard_user', () => {
         await expect(LoginPage.loginLogo).toBeDisplayedInViewport();
     });
 });
-
-

@@ -37,6 +37,54 @@
         return $('#header_container > div.header_secondary_container > div.right_component > span > select');
     }
 
+    get firstProduct () { 
+        return $('#item_4_img_link > img');
+    }
+
+    get secondProduct () { 
+        return $('#item_0_img_link > img');
+    }
+    
+    get thirdProduct () { 
+        return $('#item_1_img_link > img');
+    }
+    
+    get fourthProduct () { 
+        return $('#item_5_img_link > img');
+    }
+    
+    get fiftProduct () { 
+        return $('#item_2_img_link > img');
+    }
+    
+    get sixthProduct () { 
+        return $('#item_3_img_link > img');
+    }
+
+    get productPrice () { 
+        return $('.inventory_item_price');
+    }
+
+    get backpackAddToCartBtn () { 
+        return $('#add-to-cart-sauce-labs-backpack');
+    }
+   
+    get lightAddToCartBtn () { 
+        return $('#add-to-cart-sauce-labs-bike-light');
+    }
+
+    get shirtAddToCartBtn () { 
+        return $('#add-to-cart-sauce-labs-bolt-t-shirt');
+    }
+
+    get jacketAddToCartBtn () { 
+        return $('#add-to-cart-sauce-labs-fleece-jacket');
+    }
+
+    get onesieAddToCartBtn () { 
+        return $('#add-to-cart-sauce-labs-onesie');
+    }
+
     get footer () {
         return $('#page_wrapper > footer');
     } 

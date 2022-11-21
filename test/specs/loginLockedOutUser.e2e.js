@@ -5,6 +5,16 @@ describe('Login with locked_out_user', () => {
         browser.url('https://www.saucedemo.com/');
     });
 
+    it('should not login with empty inputs', async () => {
+        await expect(LoginPage.robotImg).toBeDisplayed();
+        await expect(LoginPage.robotImg).toBeDisplayedInViewport();
+        await expect(LoginPage.loginLogo).toBeDisplayedInViewport();
+        await LoginPage.login('', '');
+        await expect(LoginPage.errorMsg).toBeDisplayed();
+        await expect(LoginPage.btnErrorMsg).toBeClickable();
+        await expect(LoginPage.errorMsg).toHaveText('Epic sadface: Username is required');
+    });
+
     it('should not login with empty Password input', async () => {
         await LoginPage.login('locked_out_user', '');
         await expect(LoginPage.errorMsg).toBeDisplayed();
