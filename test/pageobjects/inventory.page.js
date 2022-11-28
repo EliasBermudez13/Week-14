@@ -3,7 +3,7 @@
  */
  class InventoryPage {
     /**
-     * define selectors using getter methods
+     * define selectors using gettter methods
      */
     get pageLogo () {
         return $('.app_logo');
