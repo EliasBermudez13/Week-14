@@ -105,14 +105,35 @@ describe('Purchase with standar_user', () => {
         await expect(OverviewPage.finishBtn).toBeDisplayed();
     });
 
+    it('should complete the checkout process', async () => {
+        await OverviewPage.finishBtn.click();
+        await expect(browser).toHaveUrl('https://www.saucedemo.com/checkout-complete.html');
+        await expect(CompletePage.pageLogo).toBeDisplayed();
+        await expect(CompletePage.burgerMenu).toBeDisplayed();
+        await expect(CompletePage.checkOutCompleteTitle).toBeDisplayed();
+        await expect(CompletePage.checkOutCompleteTitle).toHaveText('CHECKOUT: COMPLETE!');
+        await expect(CompletePage.completeH2).toBeDisplayed();
+        await expect(CompletePage.completeH2).toHaveText('THANK YOU FOR YOUR ORDER');
+        await expect(CompletePage.completeText).toBeDisplayed();
+        await expect(CompletePage.completeText).toHaveText('Your order has been dispatched, and will arrive just as fast as the pony can get there!');
+        await expect(CompletePage.completeImg).toHaveAttr('src', '/static/media/pony-express.46394a5d.png');
+        await expect(CompletePage.completeImg).toBeDisplayed();
+        await expect(CompletePage.completeImg).toBeDisplayed();
+        await expect(CompletePage.backHomeBtn).toBeDisplayed();
+        await expect(CompletePage.backHomeBtn).toBeClickable();
+    });
+
     it('should log out of a valid user', async () => {
-        await InventoryPage.burgerMenu.scrollIntoView();
+        await CompletePage.backHomeBtn.click();
+        await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
+        await expect(InventoryPage.productsBotImg).toBeDisplayed();
         await InventoryPage.burgerMenu.click();
         await expect(InventoryPage.burgerMenuLogOut).toBeDisplayed();
         await expect(InventoryPage.burgerMenuLogOut).toBeDisplayedInViewport();
         await expect(InventoryPage.burgerMenuLogOut).toBeClickable();
         await expect(InventoryPage.burgerMenuLogOut).toHaveLink('#');
         await InventoryPage.burgerMenuLogOut.click();
+        await expect(browser).toHaveUrl('https://www.saucedemo.com/')
         await expect(LoginPage.robotImg).toBeDisplayed();
         await expect(LoginPage.robotImg).toBeDisplayedInViewport();
         await expect(LoginPage.loginLogo).toBeDisplayedInViewport();
