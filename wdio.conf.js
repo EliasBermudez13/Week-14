@@ -24,11 +24,16 @@ exports.config = {
         './test/specs/loginStandardUser.e2e.js',
         './test/specs/loginLockedOutUser.e2e.js',
         './test/specs/loginProblemUser.e2e.js',
-        './test/specs/loginPerformanceGlitchUser.e2e.js'
+        './test/specs/loginPerformanceGlitchUser.e2e.js',
+        './test/specs/purchasingProcess.e2e.js'
     ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
+        './test/specs/loginStandardUser.e2e.js',
+        './test/specs/loginLockedOutUser.e2e.js',
+        './test/specs/loginProblemUser.e2e.js',
+        './test/specs/loginPerformanceGlitchUser.e2e.js'
     ],
     //
     // ============

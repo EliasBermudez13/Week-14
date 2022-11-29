@@ -49,6 +49,14 @@
         return $('//*[@id="cart_contents_container"]/div/div[1]/div[3]/div[2]/div[1]');
     }
 
+    get priceItem0 () {
+        return $('//*[@id="cart_contents_container"]/div/div[1]/div[3]/div[2]/div[2]/div');
+    }
+
+    get priceItem4 () {
+        return $('//*[@id="cart_contents_container"]/div/div[1]/div[4]/div[2]/div[2]/div');
+    }
+
     get checkOutBtn () {
         return $('#checkout');
     }

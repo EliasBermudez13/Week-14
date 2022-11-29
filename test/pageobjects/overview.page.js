@@ -34,11 +34,19 @@
     }
 
     get descriptionItem0 () {
-        return $('//*[@id="cart_contents_container"]/div/div[1]/div[4]/div[2]/div[1]');
+        return $('//*[@id="checkout_summary_container"]/div/div[1]/div[3]/div[2]/div[1]');
     }
 
     get descriptionItem4 () {
-        return $('//*[@id="cart_contents_container"]/div/div[1]/div[3]/div[2]/div[1]');
+        return $('//*[@id="checkout_summary_container"]/div/div[1]/div[4]/div[2]/div[1]');
+    }
+
+    get priceItem0 () {
+        return $('//*[@id="checkout_summary_container"]/div/div[1]/div[4]/div[2]/div[2]/div');
+    }
+
+    get priceItem4 () {
+        return $('//*[@id="checkout_summary_container"]/div/div[1]/div[3]/div[2]/div[2]/div');
     }
 
     get overviewTitle () {
@@ -60,15 +68,15 @@
         return $('//*[@id="checkout_summary_container"]/div/div[2]/div[4]');
     } 
 
-    get descriptionTitle () {
+    get subtotalValue () {
         return $('.summary_subtotal_label');
     }
     
-    get overviewTitle () {
+    get taxValue () {
         return $('.summary_tax_label');
     } 
 
-    get quantityTitle () {
+    get totalValue () {
         return $('.summary_total_label');
     } 
 

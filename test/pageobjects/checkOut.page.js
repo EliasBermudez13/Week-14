@@ -36,6 +36,13 @@
     get cancelBtn () {
         return $('#cancel');
     }
+
+    async completeForm (firstName, lastName, zipCode) {
+        await this.firstNameInput.setValue(firstName);
+        await this.LastNameInput.setValue(lastName);
+        await this.zipOrPostalCodeInput.setValue(zipCode);
+        await this.continueBtn.click();
+    }
 }
 
 export default new CheckOutPage();

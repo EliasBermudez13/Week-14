@@ -113,6 +113,17 @@
         return $('#page_wrapper > footer > img');
     } 
 
+    get backpackRemoveOfCartBtn () { 
+        return $('#remove-sauce-labs-backpack');
+    }
+   
+    get lightRemoveOfCartBtn () { 
+        return $('#remove-sauce-labs-bike-light');
+    }
+
+    get cartBadge () { 
+        return $('.shopping_cart_badge');
+    }
 }
 
 export default new InventoryPage();
